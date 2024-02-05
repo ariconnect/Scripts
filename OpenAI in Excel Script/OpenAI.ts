@@ -2,7 +2,7 @@ async function main(workbook: ExcelScript.Workbook) {
     
     // Set the OpenAI API key - You'll need to add this in the Excel file or replace this part with your key
     const apiKey = workbook.getWorksheet("API").getRange("B1").getValue();
-    const endpoint: string = "https://api.openai.com/v1/completions";
+    const endpoint: string = "https://api.openai.com/v1/chat/completions";
 
     // get worksheet info
     const sheet = workbook.getWorksheet("Prompt");
@@ -15,7 +15,7 @@ async function main(workbook: ExcelScript.Workbook) {
     sheet.getRange("B3").setValue(" ")
 
     // Set the model engine and prompt
-    const model: string = "text-davinci-002";
+    const model: string = "gpt-4-0125-preview";
   const prompt: (string | boolean | number) = mytext;
 
     // Set the HTTP headers
